@@ -1,11 +1,656 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bnb</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Udonga Furnished Homes | Premium Short & Long Stay Rentals</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
-    
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-mark">U</div>
+        <div class="logo-text">
+          <span class="logo-main">UDONGA</span>
+          <span class="logo-sub">Furnished Homes</span>
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#listings">Listings</a></li>
+        <li><a href="#cities">Cities</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact" class="nav-cta">Book Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1600&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1600&q=80')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-pill">
+        <i class="fas fa-circle-check"></i> Est. 2020 · Kisumu → Nairobi → Kenya
+      </div>
+      <h1 class="hero-title">
+        Feel At Home,<br/><em>Anywhere in Kenya</em>
+      </h1>
+      <p class="hero-sub">Fully furnished studios to 5-bedroom homes for short & long stays. Premium comfort in Kisumu, Nairobi & beyond.</p>
+      <div class="hero-search">
+        <div class="search-group">
+          <label><i class="fas fa-map-marker-alt"></i> City</label>
+          <select id="heroCity">
+            <option value="">All Cities</option>
+            <option value="kisumu">Kisumu</option>
+            <option value="nairobi">Nairobi</option>
+            <option value="mombasa">Mombasa</option>
+          </select>
+        </div>
+        <div class="search-group">
+          <label><i class="fas fa-bed"></i> Unit Type</label>
+          <select id="heroType">
+            <option value="">Any Type</option>
+            <option value="studio">Studio</option>
+            <option value="1br">1 Bedroom</option>
+            <option value="2br">2 Bedroom</option>
+            <option value="3br">3 Bedroom</option>
+            <option value="4br">4 Bedroom</option>
+            <option value="5br">5 Bedroom</option>
+          </select>
+        </div>
+        <button class="search-btn" id="heroSearchBtn">
+          <i class="fas fa-search"></i> Find a Home
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><span class="hnum" data-target="11">0</span><span class="hlabel">Units Available</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hnum" data-target="3">0</span><span class="hlabel">Cities</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hnum" data-target="4">0</span><span class="hlabel">Years Running</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hnum" data-target="98">0</span><span class="hunit">%</span><span class="hlabel">Guest Satisfaction</span></div>
+      </div>
+    </div>
+    <div class="hero-dots" id="heroDots"></div>
+  </section>
+
+  <!-- LISTINGS -->
+  <section class="listings section" id="listings">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-tag">FIND YOUR SPACE</div>
+          <h2 class="section-title">Browse Our <em>Properties</em></h2>
+        </div>
+        <p class="section-lead">11 fully furnished units across Kisumu and Nairobi — every one move-in ready.</p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <div class="filter-group">
+          <button class="fbtn active" data-city="all">All Cities</button>
+          <button class="fbtn" data-city="kisumu">
+            <i class="fas fa-water"></i> Kisumu
+            <span class="fbadge">8</span>
+          </button>
+          <button class="fbtn" data-city="nairobi">
+            <i class="fas fa-city"></i> Nairobi
+            <span class="fbadge">3</span>
+          </button>
+        </div>
+        <div class="filter-group">
+          <button class="fbtn-type active" data-type="all">All Types</button>
+          <button class="fbtn-type" data-type="studio">Studio</button>
+          <button class="fbtn-type" data-type="1br">1BR</button>
+          <button class="fbtn-type" data-type="2br">2BR</button>
+          <button class="fbtn-type" data-type="3br">3BR</button>
+          <button class="fbtn-type" data-type="4br">4BR+</button>
+        </div>
+      </div>
+
+      <!-- Units Grid -->
+      <div class="units-grid" id="unitsGrid">
+
+        <!-- KISUMU UNITS -->
+        <div class="unit-card" data-city="kisumu" data-type="studio">
+          <div class="unit-img">
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&q=80" alt="Studio Milimani"/>
+            <span class="unit-badge">Kisumu</span>
+            <span class="unit-type-tag">Studio</span>
+          </div>
+          <div class="unit-body">
+            <div class="unit-top">
+              <h3>Milimani Studio Suite</h3>
+              <div class="unit-price">KES 2,500<span>/night</span></div>
+            </div>
+            <div class="unit-meta">
+              <span><i class="fas fa-bed"></i> Studio</span>
+              <span><i class="fas fa-bath"></i> 1 Bath</span>
+              <span><i class="fas fa-wifi"></i> Free WiFi</span>
+            </div>
+            <p>Cosy fully furnished studio in the heart of Milimani, Kisumu. Perfect for solo travelers and business visitors.</p>
+            <div class="unit-actions">
+              <a href="#contact" class="unit-btn-primary">Book Now</a>
+              <a href="https://wa.me/254717630023?text=Hello%20Dennis%2C%20I%27m%20interested%20in%20the%20Milimani%20Studio%20Suite%20in%20Kisumu." target="_blank" class="unit-btn-wa"><i class="fab fa-whatsapp"></i> Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="unit-card" data-city="kisumu" data-type="1br">
+          <div class="unit-img">
+            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&q=80" alt="1BR Kisumu"/>
+            <span class="unit-badge">Kisumu</span>
+            <span class="unit-type-tag">1 Bedroom</span>
+          </div>
+          <div class="unit-body">
+            <div class="unit-top">
+              <h3>Lakeview 1BR Apartment</h3>
+              <div class="unit-price">KES 3,500<span>/night</span></div>
+            </div>
+            <div class="unit-meta">
+              <span><i class="fas fa-bed"></i> 1 Bed</span>
+              <span><i class="fas fa-bath"></i> 1 Bath</span>
+              <span><i class="fas fa-tv"></i> Smart TV</span>
+            </div>
+            <p>Stunning lake views from a modern 1-bedroom in Kisumu's sought-after Lakeview estate. Serene and fully equipped.</p>
+            <div class="unit-actions">
+              <a href="#contact" class="unit-btn-primary">Book Now</a>
+              <a href="https://wa.me/254717630023?text=Hello%20Dennis%2C%20I%27m%20interested%20in%20the%20Lakeview%201BR%20in%20Kisumu." target="_blank" class="unit-btn-wa"><i class="fab fa-whatsapp"></i> Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="unit-card featured" data-city="kisumu" data-type="2br">
+          <div class="unit-img">
+            <img src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=500&q=80" alt="2BR Kisumu"/>
+            <span class="unit-badge">Kisumu</span>
+            <span class="unit-type-tag">2 Bedroom</span>
+            <span class="unit-popular">Popular</span>
+          </div>
+          <div class="unit-body">
+            <div class="unit-top">
+              <h3>Nyalenda 2BR Family Home</h3>
+              <div class="unit-price">KES 5,500<span>/night</span></div>
+            </div>
+            <div class="unit-meta">
+              <span><i class="fas fa-bed"></i> 2 Beds</span>
+              <span><i class="fas fa-bath"></i> 2 Baths</span>
+              <span><i class="fas fa-car"></i> Parking</span>
+            </div>
+            <p>Spacious 2-bedroom in a quiet Nyalenda neighborhood. Great for families or extended business stays.</p>
+            <div class="unit-actions">
+              <a href="#contact" class="unit-btn-primary">Book Now</a>
+              <a href="https://wa.me/254717630023?text=Hello%20Dennis%2C%20I%27m%20interested%20in%20the%20Nyalenda%202BR%20in%20Kisumu." target="_blank" class="unit-btn-wa"><i class="fab fa-whatsapp"></i> Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="unit-card" data-city="kisumu" data-type="2br">
+          <div class="unit-img">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&q=80" alt="2BR Kisumu CBD"/>
+            <span class="unit-badge">Kisumu</span>
+            <span class="unit-type-tag">2 Bedroom</span>
+          </div>
+          <div class="unit-body">
+            <div class="unit-top">
+              <h3>CBD 2BR Executive Flat</h3>
+              <div class="unit-price">KES 6,000<span>/night</span></div>
+            </div>
+            <div class="unit-meta">
+              <span><i class="fas fa-bed"></i> 2 Beds</span>
+              <span><i class="fas fa-bath"></i> 1 Bath</span>
+              <span><i class="fas fa-bolt"></i> Backup Power</span>
+            </div>
+            <p>Executive 2-bedroom flat steps from Kisumu CBD. Ideal for business travelers needing a central base.</p>
+            <div class="unit-actions">
+              <a href="#contact" class="unit-btn-primary">Book Now</a>
+              <a href="https://wa.me/254717630023?text=Hello%20Dennis%2C%20I%27m%20interested%20in%20the%20CBD%202BR%20Executive%20Flat%20in%20Kisumu." target="_blank" class="unit-btn-wa"><i class="fab fa-whatsapp"></i> Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="unit-card" data-city="kisumu" data-type="3br">
+          <div class="unit-img">
+            <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=500&q=80" alt="3BR Kisumu"/>
+            <span class="unit-badge">Kisumu</span>
+            <span class="unit-type-tag">3 Bedroom</span>
+          </div>
+          <div class="unit-body">
+            <div class="unit-top">
+              <h3>Tom Mboya 3BR Residence</h3>
+              <div class="unit-price">KES 8,500<span>/night</span></div>
+            </div>
+            <div class="unit-meta">
+              <span><i class="fas fa-bed"></i> 3 Beds</span>
+              <span><i class="fas fa-bath"></i> 2 Baths</span>
+              <span><i class="fas fa-utensils"></i> Full Kitchen</span>
+            </div>
+            <p>Premium 3-bedroom near Tom Mboya Street. Fully furnished with a modern kitchen, ideal for groups and families.</p>
+            <div class="unit-actions">
+              <a href="#contact" class="unit-btn-primary">Book Now</a>
+              <a href="https://wa.me/254717630023?text=Hello%20Dennis%2C%20I%27m%20interested%20in%20the%20Tom%20Mboya%203BR%20in%20Kisumu." target="_blank" class="unit-btn-wa"><i class="fab fa-whatsapp"></i> Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="unit-card" data-city="kisumu" data-type="3br">
+          <div class="unit-img">
+            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=500&q=80" alt="3BR Riat"/>
+            <span class="unit-badge">Kisumu</span>
+            <span class="unit-type-tag">3 Bedroom</span>
+          </div>
+          <div class="unit-body">
+            <div class="unit-top">
+              <h3>Riat Hills 3BR Villa</h3>
+              <div class="unit-price">KES 9,000<span>/night</span></div>
+            </div>
+            <div class="unit-meta">
+              <span><i class="fas fa-bed"></i> 3 Beds</span>
+              <span><i class="fas fa-bath"></i> 2 Baths</span>
+              <span><i class="fas fa-mountain"></i> Hill Views</span>
+            </div>
+            <p>Elevated 3-bedroom villa with breathtaking Riat Hills views. A true retreat feel with all city conveniences nearby.</p>
+            <div class="unit-actions">
+              <a href="#contact" class="unit-btn-primary">Book Now</a>
+              <a href="https://wa.me/254717630023?text=Hello%20Dennis%2C%20I%27m%20interested%20in%20the%20Riat%20Hills%203BR%20Villa%20in%20Kisumu." target="_blank" class="unit-btn-wa"><i class="fab fa-whatsapp"></i> Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="unit-card" data-city="kisumu" data-type="4br">
+          <div class="unit-img">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&q=80" alt="4BR Kisumu"/>
+            <span class="unit-badge">Kisumu</span>
+            <span class="unit-type-tag">4 Bedroom</span>
+          </div>
+          <div class="unit-body">
+            <div class="unit-top">
+              <h3>Milimani 4BR Luxury Home</h3>
+              <div class="unit-price">KES 13,000<span>/night</span></div>
+            </div>
+            <div class="unit-meta">
+              <span><i class="fas fa-bed"></i> 4 Beds</span>
+              <span><i class="fas fa-bath"></i> 3 Baths</span>
+              <span><i class="fas fa-swimming-pool"></i> Garden</span>
+            </div>
+            <p>Grand 4-bedroom in prestigious Milimani. Perfect for large families, corporate retreats, or long-stay executives.</p>
+            <div class="unit-actions">
+              <a href="#contact" class="unit-btn-primary">Book Now</a>
+              <a href="https://wa.me/254717630023?text=Hello%20Dennis%2C%20I%27m%20interested%20in%20the%20Milimani%204BR%20in%20Kisumu." target="_blank" class="unit-btn-wa"><i class="fab fa-whatsapp"></i> Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="unit-card" data-city="kisumu" data-type="4br">
+          <div class="unit-img">
+            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&q=80" alt="5BR Kisumu"/>
+            <span class="unit-badge">Kisumu</span>
+            <span class="unit-type-tag">5 Bedroom</span>
+          </div>
+          <div class="unit-body">
+            <div class="unit-top">
+              <h3>Lakeshore 5BR Manor</h3>
+              <div class="unit-price">KES 18,000<span>/night</span></div>
+            </div>
+            <div class="unit-meta">
+              <span><i class="fas fa-bed"></i> 5 Beds</span>
+              <span><i class="fas fa-bath"></i> 4 Baths</span>
+              <span><i class="fas fa-water"></i> Lake Views</span>
+            </div>
+            <p>Our flagship Kisumu property — a stunning 5-bedroom manor steps from Lake Victoria. The ultimate group or family stay.</p>
+            <div class="unit-actions">
+              <a href="#contact" class="unit-btn-primary">Book Now</a>
+              <a href="https://wa.me/254717630023?text=Hello%20Dennis%2C%20I%27m%20interested%20in%20the%20Lakeshore%205BR%20Manor%20in%20Kisumu." target="_blank" class="unit-btn-wa"><i class="fab fa-whatsapp"></i> Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- NAIROBI UNITS -->
+        <div class="unit-card" data-city="nairobi" data-type="1br">
+          <div class="unit-img">
+            <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=500&q=80" alt="1BR Nairobi"/>
+            <span class="unit-badge nairobi">Nairobi</span>
+            <span class="unit-type-tag">1 Bedroom</span>
+          </div>
+          <div class="unit-body">
+            <div class="unit-top">
+              <h3>Westlands 1BR Modern Apt</h3>
+              <div class="unit-price">KES 5,000<span>/night</span></div>
+            </div>
+            <div class="unit-meta">
+              <span><i class="fas fa-bed"></i> 1 Bed</span>
+              <span><i class="fas fa-bath"></i> 1 Bath</span>
+              <span><i class="fas fa-wifi"></i> Fiber WiFi</span>
+            </div>
+            <p>Sleek 1-bedroom in vibrant Westlands, Nairobi. Close to restaurants, malls, and business hubs — perfect for professionals.</p>
+            <div class="unit-actions">
+              <a href="#contact" class="unit-btn-primary">Book Now</a>
+              <a href="https://wa.me/254717630023?text=Hello%20Dennis%2C%20I%27m%20interested%20in%20the%20Westlands%201BR%20in%20Nairobi." target="_blank" class="unit-btn-wa"><i class="fab fa-whatsapp"></i> Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="unit-card featured" data-city="nairobi" data-type="2br">
+          <div class="unit-img">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&q=80" alt="2BR Nairobi"/>
+            <span class="unit-badge nairobi">Nairobi</span>
+            <span class="unit-type-tag">2 Bedroom</span>
+            <span class="unit-popular">Popular</span>
+          </div>
+          <div class="unit-body">
+            <div class="unit-top">
+              <h3>Kilimani 2BR Premium Flat</h3>
+              <div class="unit-price">KES 8,000<span>/night</span></div>
+            </div>
+            <div class="unit-meta">
+              <span><i class="fas fa-bed"></i> 2 Beds</span>
+              <span><i class="fas fa-bath"></i> 2 Baths</span>
+              <span><i class="fas fa-shield-alt"></i> 24hr Security</span>
+            </div>
+            <p>Upscale 2-bedroom in Kilimani's leafy streets. Premium finishes, secure compound, and close to Ngong Road amenities.</p>
+            <div class="unit-actions">
+              <a href="#contact" class="unit-btn-primary">Book Now</a>
+              <a href="https://wa.me/254717630023?text=Hello%20Dennis%2C%20I%27m%20interested%20in%20the%20Kilimani%202BR%20in%20Nairobi." target="_blank" class="unit-btn-wa"><i class="fab fa-whatsapp"></i> Enquire</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="unit-card" data-city="nairobi" data-type="3br">
+          <div class="unit-img">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=500&q=80" alt="3BR Nairobi"/>
+            <span class="unit-badge nairobi">Nairobi</span>
+            <span class="unit-type-tag">3 Bedroom</span>
+          </div>
+          <div class="unit-body">
+            <div class="unit-top">
+              <h3>Lavington 3BR Family Home</h3>
+              <div class="unit-price">KES 12,000<span>/night</span></div>
+            </div>
+            <div class="unit-meta">
+              <span><i class="fas fa-bed"></i> 3 Beds</span>
+              <span><i class="fas fa-bath"></i> 2 Baths</span>
+              <span><i class="fas fa-car"></i> 2 Parking</span>
+            </div>
+            <p>Beautiful 3-bedroom in Lavington — one of Nairobi's most prestigious addresses. Spacious, quiet, and fully appointed.</p>
+            <div class="unit-actions">
+              <a href="#contact" class="unit-btn-primary">Book Now</a>
+              <a href="https://wa.me/254717630023?text=Hello%20Dennis%2C%20I%27m%20interested%20in%20the%20Lavington%203BR%20in%20Nairobi." target="_blank" class="unit-btn-wa"><i class="fab fa-whatsapp"></i> Enquire</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- No results -->
+      <div class="no-results" id="noResults" style="display:none;">
+        <i class="fas fa-search"></i>
+        <p>No units match your filter. <a href="#" id="resetFilters">Clear filters</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CITIES -->
+  <section class="cities section" id="cities">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag">WHERE WE ARE</div>
+        <h2 class="section-title">We're Growing <em>Across Kenya</em></h2>
+        <p class="section-lead">Started in Kisumu in 2020 — now in Nairobi, and coming soon to Mombasa.</p>
+      </div>
+      <div class="cities-grid">
+        <div class="city-card main">
+          <img src="https://images.unsplash.com/photo-1568745155247-e45b5ed6e53f?w=700&q=80" alt="Kisumu"/>
+          <div class="city-overlay">
+            <div class="city-info">
+              <span class="city-tag">Our Home Base</span>
+              <h3>Kisumu</h3>
+              <p>8 units · Est. 2020</p>
+              <p class="city-desc">Where it all began. Our largest presence is on the shores of Lake Victoria — the pearl of the west.</p>
+              <a href="#listings" class="city-btn" data-city="kisumu">View Units</a>
+            </div>
+          </div>
+        </div>
+        <div class="city-card">
+          <img src="https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=500&q=80" alt="Nairobi"/>
+          <div class="city-overlay">
+            <div class="city-info">
+              <span class="city-tag">Capital City</span>
+              <h3>Nairobi</h3>
+              <p>3 units · Since 2022</p>
+              <p class="city-desc">Premium furnished apartments in Westlands, Kilimani & Lavington — the best of the city.</p>
+              <a href="#listings" class="city-btn" data-city="nairobi">View Units</a>
+            </div>
+          </div>
+        </div>
+        <div class="city-card coming">
+          <img src="https://images.unsplash.com/photo-1590418606746-018840f9ced0?w=500&q=80" alt="Mombasa"/>
+          <div class="city-overlay">
+            <div class="city-info">
+              <span class="city-tag coming-tag">Coming Soon</span>
+              <h3>Mombasa</h3>
+              <p>Coastal Expansion</p>
+              <p class="city-desc">Our beachside chapter is coming. Swahili coast luxury, Udonga style.</p>
+              <span class="city-btn disabled">Notify Me</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section class="amenities section" id="amenities">
+    <div class="amenities-bg"></div>
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag">WHAT'S INCLUDED</div>
+        <h2 class="section-title" style="color:#fff;">Every Home Comes <em>Fully Equipped</em></h2>
+        <p class="section-lead" style="color:rgba(255,255,255,0.65);">No surprises. Every Udonga home is move-in ready from day one.</p>
+      </div>
+      <div class="amenities-grid">
+        <div class="amen-card"><div class="amen-icon"><i class="fas fa-wifi"></i></div><h4>High-Speed WiFi</h4><p>Fast fibre or 4G internet in every unit — work from home ready.</p></div>
+        <div class="amen-card"><div class="amen-icon"><i class="fas fa-couch"></i></div><h4>Fully Furnished</h4><p>Quality furniture, bedding, curtains and décor — nothing to bring.</p></div>
+        <div class="amen-card"><div class="amen-icon"><i class="fas fa-utensils"></i></div><h4>Equipped Kitchen</h4><p>Cooker, fridge, microwave, cookware and utensils all included.</p></div>
+        <div class="amen-card"><div class="amen-icon"><i class="fas fa-tv"></i></div><h4>Smart TV</h4><p>Netflix-ready Smart TVs in living rooms and select bedrooms.</p></div>
+        <div class="amen-card"><div class="amen-icon"><i class="fas fa-shield-alt"></i></div><h4>24hr Security</h4><p>Secure compounds with guards or controlled access systems.</p></div>
+        <div class="amen-card"><div class="amen-icon"><i class="fas fa-bolt"></i></div><h4>Backup Power</h4><p>Generator or solar backup in select units — no blackout disruptions.</p></div>
+        <div class="amen-card"><div class="amen-icon"><i class="fas fa-car"></i></div><h4>Parking</h4><p>Dedicated parking bays available in most of our properties.</p></div>
+        <div class="amen-card"><div class="amen-icon"><i class="fas fa-broom"></i></div><h4>Housekeeping</h4><p>Weekly cleaning service included on long stays on request.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag">TAKE A LOOK</div>
+        <h2 class="section-title">Inside Our <em>Homes</em></h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gal-item tall"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=500&q=80" alt="Living room"/></div>
+        <div class="gal-item"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&q=80" alt="Kitchen"/></div>
+        <div class="gal-item"><img src="https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=500&q=80" alt="Bedroom"/></div>
+        <div class="gal-item wide"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=700&q=80" alt="Open plan"/></div>
+        <div class="gal-item"><img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=500&q=80" alt="Bathroom"/></div>
+        <div class="gal-item"><img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=500&q=80" alt="Dining area"/></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT DENNIS -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <img src="https://ui-avatars.com/api/?name=Dennis+Udonga&size=500&background=0d9488&color=ffffff&bold=true&font-size=0.35" alt="Dennis Udonga"/>
+          <div class="about-float-card">
+            <span class="afc-num">2020</span>
+            <span class="afc-label">Founded in Kisumu</span>
+          </div>
+        </div>
+        <div class="about-copy">
+          <div class="section-tag">MEET THE OWNER</div>
+          <h2 class="section-title">A Word From <em>Dennis Udonga</em></h2>
+          <p>I started Udonga Furnished Homes in Kisumu in 2020 with one simple goal — to give travelers, professionals, and families a real home away from home. Not a cold hotel room, but a warm, fully furnished space where you can cook, relax, work, and live.</p>
+          <p>What began as a single unit in Kisumu has grown into 11 properties across two cities, with Mombasa on the horizon. Every home in our portfolio is personally vetted — if I wouldn't stay there myself, it doesn't carry the Udonga name.</p>
+          <div class="about-highlights">
+            <div class="ah-item"><i class="fas fa-map-marker-alt"></i> <span>Kisumu, Nairobi & Mombasa (coming)</span></div>
+            <div class="ah-item"><i class="fas fa-calendar-check"></i> <span>Short stays & long-term leases available</span></div>
+            <div class="ah-item"><i class="fas fa-headset"></i> <span>Direct contact — no middlemen</span></div>
+            <div class="ah-item"><i class="fab fa-whatsapp"></i> <span>Always reachable on WhatsApp</span></div>
+          </div>
+          <a href="https://wa.me/254717630023?text=Hello%20Dennis%2C%20I%27d%20love%20to%20know%20more%20about%20Udonga%20Furnished%20Homes." target="_blank" class="btn-wa-main">
+            <i class="fab fa-whatsapp"></i> Chat with Dennis
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag">GUEST REVIEWS</div>
+        <h2 class="section-title">What Our <em>Guests Say</em></h2>
+      </div>
+      <div class="tgrid">
+        <div class="tcard">
+          <div class="tstars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>"Stayed at the Lakeview 1BR for two weeks on a work trip. Immaculate, well-stocked, and Dennis was incredibly responsive. Will definitely be back!"</p>
+          <div class="tauthor"><div class="tavatar">AO</div><div><strong>Amara Ochieng</strong><span>Kisumu · 2 weeks stay</span></div></div>
+        </div>
+        <div class="tcard">
+          <div class="tstars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>"The Kilimani flat in Nairobi was perfect for our family. Clean, spacious, and felt like home. Way better value than any hotel at that price point."</p>
+          <div class="tauthor"><div class="tavatar">FM</div><div><strong>Faith Mwangi</strong><span>Nairobi · Family trip</span></div></div>
+        </div>
+        <div class="tcard">
+          <div class="tstars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>"Booked the Riat Hills 3BR for a team retreat — breathtaking views, super clean, great kitchen. Dennis sorted us out in minutes on WhatsApp."</p>
+          <div class="tauthor"><div class="tavatar">JK</div><div><strong>James Kamau</strong><span>Kisumu · Team retreat</span></div></div>
+        </div>
+        <div class="tcard">
+          <div class="tstars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+          <p>"Impressed by how well-furnished everything was. Smart TV, full kitchen, fast WiFi — I extended my stay by 5 days. Highly recommend Udonga!"</p>
+          <div class="tauthor"><div class="tavatar">RN</div><div><strong>Ruth Njeri</strong><span>Nairobi · Extended stay</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-tag">MAKE A BOOKING</div>
+          <h2 class="section-title">Ready to <em>Check In?</em></h2>
+          <p>Fill in the form or reach Dennis directly on WhatsApp for a quick response. We'll confirm availability and get you sorted.</p>
+          <div class="cdetails">
+            <div class="cdet"><div class="cdet-icon"><i class="fas fa-map-marker-alt"></i></div><div><strong>Kisumu Office</strong><span>Milimani Road, Kisumu, Kenya</span></div></div>
+            <div class="cdet"><div class="cdet-icon"><i class="fas fa-map-marker-alt"></i></div><div><strong>Nairobi Office</strong><span>Westlands, Nairobi, Kenya</span></div></div>
+            <div class="cdet"><div class="cdet-icon"><i class="fas fa-phone"></i></div><div><strong>Phone</strong><span>+254 717 630 023</span></div></div>
+            <div class="cdet"><div class="cdet-icon" style="background:rgba(37,211,102,0.12);color:#25D366;"><i class="fab fa-whatsapp"></i></div><div><strong>WhatsApp Dennis</strong><span><a href="https://wa.me/254717630023?text=Hello%20Dennis%2C%20I%27d%20like%20to%20make%20a%20booking." target="_blank" style="color:#25D366;font-weight:600;">Chat directly → +254 717 630 023</a></span></div></div>
+            <div class="cdet"><div class="cdet-icon"><i class="fas fa-clock"></i></div><div><strong>Response Time</strong><span>Usually within 30 minutes</span></div></div>
+          </div>
+          <a href="https://wa.me/254717630023?text=Hello%20Dennis%2C%20I%27d%20like%20to%20make%20a%20booking%20at%20Udonga%20Furnished%20Homes." target="_blank" class="btn-wa-main" style="margin-top:2rem;">
+            <i class="fab fa-whatsapp"></i> WhatsApp to Book Now
+          </a>
+        </div>
+        <div class="contact-form-wrap">
+          <form id="bookingForm">
+            <div class="form-row">
+              <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your name" required/></div>
+              <div class="form-group"><label>Phone / WhatsApp</label><input type="tel" placeholder="+254 700 000 000" required/></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Preferred City</label>
+                <select>
+                  <option value="">Select city</option>
+                  <option>Kisumu</option>
+                  <option>Nairobi</option>
+                  <option>Mombasa (coming soon)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Unit Type</label>
+                <select>
+                  <option value="">Select type</option>
+                  <option>Studio</option>
+                  <option>1 Bedroom</option>
+                  <option>2 Bedroom</option>
+                  <option>3 Bedroom</option>
+                  <option>4 Bedroom</option>
+                  <option>5 Bedroom</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Check-in Date</label><input type="date"/></div>
+              <div class="form-group"><label>Check-out Date</label><input type="date"/></div>
+            </div>
+            <div class="form-group full"><label>Additional Notes</label><textarea rows="3" placeholder="Any special requirements or questions..."></textarea></div>
+            <button type="submit" class="btn-book">
+              Send Booking Request <i class="fas fa-paper-plane"></i>
+            </button>
+            <div class="form-success" id="bookSuccess">
+              <i class="fas fa-check-circle"></i> Received! Dennis will WhatsApp you shortly. &nbsp;
+              <a href="https://wa.me/254717630023?text=Hello%20Dennis%2C%20I%20just%20submitted%20a%20booking%20request." target="_blank" style="color:#25D366;font-weight:700;"><i class="fab fa-whatsapp"></i> Chat now</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo"><div class="logo-mark">U</div><div class="logo-text"><span class="logo-main">UDONGA</span><span class="logo-sub">Furnished Homes</span></div></div>
+          <p>Premium furnished homes for short & long stays across Kenya. Est. 2020 in Kisumu.</p>
+          <div class="footer-socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/254717630023" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Properties</h4><ul><li><a href="#listings">Kisumu Units (8)</a></li><li><a href="#listings">Nairobi Units (3)</a></li><li><a href="#cities">Mombasa (Coming)</a></li></ul></div>
+        <div class="footer-col"><h4>Unit Types</h4><ul><li>Studio</li><li>1 Bedroom</li><li>2 Bedroom</li><li>3 Bedroom</li><li>4 &amp; 5 Bedroom</li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><i class="fas fa-map-marker-alt"></i> Kisumu & Nairobi</li><li><i class="fas fa-phone"></i> +254 717 630 023</li><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/254717630023" target="_blank" style="color:#25D366;">WhatsApp Dennis</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Udonga Furnished Homes. All rights reserved. | Owned by Dennis Udonga</p>
+        <p>Kisumu · Nairobi · Mombasa Soon</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/254717630023?text=Hello%20Dennis%2C%20I%27m%20interested%20in%20booking%20a%20furnished%20home." target="_blank" class="wa-float" title="Chat with Dennis">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
 </body>
 </html>
